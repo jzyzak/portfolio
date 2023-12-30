@@ -70,12 +70,11 @@ body {
 
 .button-display-grid {
   display: grid;
-  grid-template-columns: 500px 500px 500px;
-  column-gap: 70px;
+  grid-template-columns: 300px 300px 300px;
+  column-gap: 125px;
   row-gap: 150px;
   padding-top: 200px;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-left: 200px;
 }
 
 .dropdown {
@@ -135,7 +134,7 @@ body {
   background-image: url(../assets/research/acd-background.png)
 }
 .beaverworks-button {
-  background-image: url(../assets/research/beaverworks-backgorund.png)
+  background-image: url(../assets/research/mit-logo.jpeg)
 }
 .cybersecurity-button {
   background-image: url(../assets/research/cybersecurity-background.jpeg)

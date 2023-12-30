@@ -7,11 +7,11 @@ body {
 }
 
 .body-text-container {
-  background-color: black;
   position: absolute;
   top: 200px;
   border-style: solid;
   border-color: white;
+  background-color: black;
   border-radius: 16px;
   margin-left: 120px;
   margin-right: 120px;
@@ -20,4 +20,5 @@ body {
 
 .body-text {
   font-size: 20px;
+  background-color: black;
 }

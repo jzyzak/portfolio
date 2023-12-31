@@ -8,7 +8,7 @@ p {
   position: absolute;
   top: 30px;
   width: 100%;
-  z-index: 101;
+  z-index: 1;
 }
 
 .website-title-text {

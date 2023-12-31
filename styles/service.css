@@ -3,60 +3,57 @@ body {
   padding-bottom: 100px;
   background-color: rgb(17, 17, 17);
   max-width: 100%;
-  overflow-x: hidden;
-}
-
-.service-title {
-  position: absolute;
-  top: 30px;
-  width: 100%;
-  z-index: 101;
-}
-
-.service-title-text {
-  font-size: 50px;
-  text-align: center;
-  padding-left: 15px;
-  padding-right: 15px;
 }
 
 .service-container {
-  padding-top: 250px;
+  padding-top: 220px;
 }
 
 .service-flexbox {
   display: flex;
-  column-gap: 100px;
+  column-gap: 120px;
   justify-content: center;
+  max-width: 100%;
 }
 
 .service-desc-container {
   background-color: black;
-  width: 500px;
+  max-width: 550px;
   border-style: solid;
   border-color: white;
   border-radius: 16px;
-  padding: 20px;
+  border-width: 1px;
+  padding-left: 20px;
+  padding-right: 20px;
   padding-top: 0px;
-  padding-bottom: 0px;
-}
-.service-website {
-  height: 500px;
+  height: auto;
+  padding-bottom: 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .service-text {
   font-size: 30px;
 }
 .service-image {
-  width: 400px;
-  height: 400px;
-  padding-top: 0;
-  padding-bottom: 0;
+  height: 430px;
+  width: 500px;
+  object-fit: cover;
+  align-self: center;
+}
+.service-image-container {
+  display: flex;
+  align-items: center;
+  height: auto;
+  width: auto/9;
+  max-height: 430px;
+  max-width: 500px;
 }
 .service-image-grid {
   display: grid;
   width: 400px;
 }
+
 .innerview-image {
   width: 400px;
   height: 200px;
@@ -66,13 +63,18 @@ body {
   margin-bottom: 0;
 }
 
+.service-website {
+  height: 500px;
+  width: 400px;
+}
+
 .button-display-grid {
   display: grid;
-  grid-template-columns: 300px 300px 300px;
-  column-gap: 125px;
-  row-gap: 150px;
+  grid-template-columns: 275px 275px 275px;
+  column-gap: 130px;
+  row-gap: 100px;
   padding-top: 200px;
-  margin-left: 200px;
+  margin-left: 190px;
 }
 
 .dropdown {
@@ -112,8 +114,8 @@ body {
 .earthecho-button,
 .gpac-button,
 .action-ministries-button {
-  height: 160px;
-  width: 200px;
+  height: 200px;
+  width: 275px;
   padding: 50px;
   object-fit: cover;
   border: none;

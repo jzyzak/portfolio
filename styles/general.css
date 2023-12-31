@@ -9,6 +9,8 @@ p {
   top: 30px;
   width: 100%;
   z-index: 1;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .website-title-text {

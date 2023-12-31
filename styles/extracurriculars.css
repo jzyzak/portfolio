@@ -6,59 +6,58 @@ body {
   overflow-x: hidden;
 }
 
-.extracurricular-title {
-  position: absolute;
-  top: 30px;
-  width: 100%;
-  z-index: 101;
-}
-
-.extracurricular-title-text {
-  font-size: 50px;
-  text-align: center;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
 .extracurricular-container {
-  padding-top: 250px;
+  padding-top: 220px;
 }
 
 .extracurricular-flexbox {
   display: flex;
-  column-gap: 100px;
+  column-gap: 120px;
   justify-content: center;
+  max-width: 100%;
 }
 
 .extracurricular-desc-container {
   background-color: black;
-  width: 500px;
+  max-width: 550px;
   border-style: solid;
   border-color: white;
   border-radius: 16px;
-  padding: 20px;
+  border-width: 1px;
+  padding-left: 20px;
+  padding-right: 20px;
   padding-top: 0px;
-  padding-bottom: 0px;
+  height: auto;
+  padding-bottom: 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .extracurricular-text {
   font-size: 30px;
 }
+
+.extracurricular-image-container {
+  display: flex;
+  align-items: center;
+  height: auto;
+  width: auto/9;
+  max-height: 430px;
+  max-width: 500px;
+}
 .extracurricular-image {
-  width: 400px;
-  height: 400px;
-  padding-top: 0;
-  padding-bottom: 0;
-  margin: 0;
+  height: 430px;
+  width: 500px;
+  object-fit: cover;
 }
 
 .button-display-grid {
   display: grid;
-  grid-template-columns: 300px 300px 300px;
-  column-gap: 125px;
-  row-gap: 150px;
+  grid-template-columns: 275px 275px 275px;
+  column-gap: 130px;
+  row-gap: 100px;
   padding-top: 200px;
-  margin-left: 200px;
+  margin-left: 190px;
 }
 
 .dropdown {
@@ -101,8 +100,8 @@ body {
 .una-usa-button,
 .kde-button,
 .ryl-button {
-  height: 160px;
-  width: 200px;
+  height: 200px;
+  width: 275px;
   padding: 50px;
   object-fit: cover;
   border: none;

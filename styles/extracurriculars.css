@@ -1,13 +1,13 @@
 body {
   margin-top: 0px;
   padding-bottom: 100px;
-  background-color: rgb(17, 17, 17);
+  background-color: black;
   max-width: 100%;
   overflow-x: hidden;
 }
 
 .extracurricular-container {
-  padding-top: 220px;
+  padding-top: 250px;
 }
 
 .extracurricular-flexbox {
@@ -46,9 +46,28 @@ body {
   max-width: 500px;
 }
 .extracurricular-image {
-  height: 430px;
-  width: 500px;
+  height: 400px;
+  width: 450px;
   object-fit: cover;
+}
+.tennis-image {
+  height: 430px;
+  width: 450px;
+  object-fit: cover;
+}
+.ryl-image {
+  height: 470px;
+  width: 450px;
+  object-fit: cover;
+}
+.una-usa-poster {
+  height: 550px;
+  width: 450px;
+  object-fit: cover;
+}
+.kde-website {
+  height: 500px;
+  width: 400px;
 }
 
 .button-display-grid {
@@ -100,7 +119,7 @@ body {
 .una-usa-button,
 .kde-button,
 .ryl-button {
-  height: 200px;
+  height: 250px;
   width: 275px;
   padding: 50px;
   object-fit: cover;

@@ -41,6 +41,12 @@ body {
   width: 500px;
   border-radius: 16px;
 }
+.wartburg-paper {
+  height: 300px;
+  width: 500px;
+  border-radius: 16px;
+}
+
 .kjas-presentation,
 .video-presentation {
   height: 400px;
@@ -74,7 +80,7 @@ body {
   display: grid;
   grid-template-columns: 275px 275px 275px;
   column-gap: 130px;
-  row-gap: 100px;
+  row-gap: 150px;
   padding-top: 200px;
   margin-left: 190px;
 }

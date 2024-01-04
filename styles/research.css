@@ -46,6 +46,15 @@ body {
   width: 500px;
   border-radius: 16px;
 }
+.wartburg-program-container {
+  margin-left: 33%;
+}
+.wartburg-program {
+  height: 300px;
+  width: 500px;
+  border-radius: 16px;
+  margin-top: 70px;
+}
 
 .kjas-presentation,
 .video-presentation {

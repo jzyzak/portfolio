@@ -27,7 +27,7 @@ body {
 
 .body-text {
   font-weight: bold;
-  font-size: 22px;
+  font-size: 23px;
   margin: 0;
 }
 
@@ -43,7 +43,7 @@ body {
 .body-picture {
   height: auto;
   width: auto/9;
-  max-height: 450px;
-  max-width: 550px;
+  max-height: 500px;
+  max-width: 650px;
   object-fit: cover;
 }

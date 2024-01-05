@@ -53,6 +53,6 @@ body {
 .about-me-picture {
   height: auto;
   width: auto/9;
-  max-height: 400px;
-  max-width: 500px
+  max-height: 500px;
+  max-width: 600px
 }

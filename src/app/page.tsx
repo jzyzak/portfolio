@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 
 export default function Home() {
-  const [isLoaded, setIsLoaded] = useState(false);
+
   const [displayText, setDisplayText] = useState('');
   const [showContent, setShowContent] = useState(false);
   const [showBackground, setShowBackground] = useState(false);
@@ -71,7 +71,6 @@ export default function Home() {
       setShowRightContent(true);
       
       await new Promise(resolve => setTimeout(resolve, 50));
-      setIsLoaded(true);
       
       // Start typewriter effect quickly
       setTimeout(() => {
@@ -224,12 +223,12 @@ export default function Home() {
                 <div className="content-block">
                   <h2 className="section-title">{getDisplayText('About Me')}</h2>
                   <p className="content-text">
-                    Hey there, thanks for stopping by my website! I'm Josh, and I'm a sophomore studying Electrical Engineering, 
+                    Hey there, thanks for stopping by my website! I&apos;m Josh, and I&apos;m a sophomore studying Electrical Engineering, 
                     Computer Science, and Statistics at Harvard. Most of my work specializes in AI, full-stack development, and 
                     building anything that I think is cool and useful.
                   </p>
                   <p className="content-text">
-                    If you're interested in my work and seeing what I've already done, check out my experiences page. If you want 
+                    If you&apos;re interested in my work and seeing what I&apos;ve already done, check out my experiences page. If you want 
                     to get in touch or learn more about me, check out my contact page. Here are some of the services I offer:
                   </p>
                 </div>
@@ -247,7 +246,7 @@ export default function Home() {
 
                 <div className="content-block">
                   <p className="content-text">
-                    If you're interested in my work and working together, make sure to contact me on LinkedIn or email me at 
+                    If you&apos;re interested in my work and working together, make sure to contact me on LinkedIn or email me at 
                     jzyzak@college.harvard.edu
                   </p>
                 </div>

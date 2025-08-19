@@ -192,7 +192,7 @@ export default function Contact() {
                 <h3 className="footer-title">Ready to Work Together?</h3>
                 <p className="footer-text">
                   Whether you need tutoring, college consulting, web/app development, or automation solutions,
-                  I'm here to help bring your ideas to life or even just to chat.
+                  I&apos;m here to help bring your ideas to life or even just to chat.
                 </p>
                 <div className="footer-skills">
                   <span className="skill-tag">Tutoring</span>

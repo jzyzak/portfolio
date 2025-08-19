@@ -45,6 +45,9 @@ export default function Experiences() {
   };
 
   useEffect(() => {
+    // Set page title
+    document.title = "Josh Zyzak | Experiences";
+    
     const showTimer = setTimeout(() => {
       setShowContent(true);
       setIsLoaded(true);

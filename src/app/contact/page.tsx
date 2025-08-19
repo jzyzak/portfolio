@@ -45,6 +45,9 @@ export default function Contact() {
   };
 
   useEffect(() => {
+    // Set page title
+    document.title = "Josh Zyzak | Contact";
+    
     const showTimer = setTimeout(() => {
       setShowContent(true);
       setIsLoaded(true);

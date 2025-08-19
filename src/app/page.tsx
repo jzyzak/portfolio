@@ -54,6 +54,9 @@ export default function Home() {
   };
 
   useEffect(() => {
+    // Set page title
+    document.title = "Josh Zyzak | Home";
+    
     const loadingSequence = async () => {
       // Quick loading for fast connections
       await new Promise(resolve => setTimeout(resolve, 150));

@@ -19,13 +19,7 @@ export default function Navbar() {
     display: 'inline-block'
   };
 
-  const ctaStyle = {
-    ...linkStyle,
-    background: 'linear-gradient(135deg, #16a34a, #22c55e)',
-    color: '#000000',
-    borderColor: '#22c55e',
-    boxShadow: '0 0 20px rgba(34, 197, 94, 0.3)'
-  };
+
 
   return (
     <>

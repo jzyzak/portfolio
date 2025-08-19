@@ -114,7 +114,7 @@ export default function Contact() {
             <h1 className={`page-title ${isLoaded ? 'title-loaded' : 'title-loading'}`}>
               Contact Me
             </h1>
-            <p className="page-subtitle">Let's connect and build cool stuff together</p>
+            <p className="page-subtitle">Let&apos;s connect and build cool stuff together</p>
           </div>
 
           {/* Contact Cards */}

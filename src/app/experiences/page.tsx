@@ -329,7 +329,7 @@ export default function Experiences() {
                     <div className="timeline-content">
                       <h3 className="timeline-title">{getDisplayText('AI-Driven Investment Insights Platform')}</h3>
                       <p className="project-summary">
-                        Summary: I don't got the time to read through a ton of reports, so I built a tool to 
+                        Summary: I don&apos;t got the time to read through a ton of reports, so I built a tool to 
                         do the heavy lifting.
                       </p>
                       <p className="timeline-description">

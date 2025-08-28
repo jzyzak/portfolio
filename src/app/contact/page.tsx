@@ -7,6 +7,14 @@ export default function Contact() {
   const [showContent, setShowContent] = useState(false);
   const [visibleCards, setVisibleCards] = useState<number[]>([]);
   const [typingTexts, setTypingTexts] = useState<{[key: string]: string}>({});
+  const [emailForm, setEmailForm] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const scrambleText = (finalText: string, duration: number = 2000) => {
     const chars = '!<>-_\\/[]{}—=+*^?#________';
@@ -79,6 +87,49 @@ export default function Contact() {
 
   const getDisplayText = (text: string) => {
     return typingTexts[text] || text;
+  };
+
+  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setEmailForm(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      // Create mailto URL with form data
+      const subject = encodeURIComponent(emailForm.subject || 'Contact from Portfolio Website');
+      const body = encodeURIComponent(
+        `Name: ${emailForm.name}\n` +
+        `Email: ${emailForm.email}\n` +
+        `Subject: ${emailForm.subject}\n\n` +
+        `Message:\n${emailForm.message}`
+      );
+      const mailtoUrl = `mailto:jzyzak@college.harvard.edu?subject=${subject}&body=${body}`;
+      
+      // Open default email client
+      window.location.href = mailtoUrl;
+      
+      // Reset form and show success
+      setEmailForm({ name: '', email: '', subject: '', message: '' });
+      setSubmitStatus('success');
+      
+      // Reset success message after 3 seconds
+      setTimeout(() => setSubmitStatus('idle'), 3000);
+      
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setSubmitStatus('error');
+      setTimeout(() => setSubmitStatus('idle'), 3000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (!showContent) {
@@ -187,6 +238,103 @@ export default function Contact() {
                 </div>
               </div>
 
+            </div>
+
+            {/* Email Contact Form */}
+            <div className="mt-16">
+              <div className="email-form-container">
+                <h3 className="form-title">Send Me a Message</h3>
+                <p className="form-subtitle">
+                  drop me a message and I&apos;ll get back to you as soon as possible 🫡
+                </p>
+                
+                <form onSubmit={handleSubmit} className="contact-form">
+                  <div className="form-row">
+                    <div className="form-group">
+                      <label htmlFor="name" className="form-label">Name *</label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={emailForm.name}
+                        onChange={handleFormChange}
+                        required
+                        className="form-input"
+                        placeholder="Your name"
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="email" className="form-label">Email *</label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={emailForm.email}
+                        onChange={handleFormChange}
+                        required
+                        className="form-input"
+                        placeholder="your.email@example.com"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="form-group">
+                    <label htmlFor="subject" className="form-label">Subject</label>
+                    <input
+                      type="text"
+                      id="subject"
+                      name="subject"
+                      value={emailForm.subject}
+                      onChange={handleFormChange}
+                      className="form-input"
+                      placeholder="What's this about?"
+                    />
+                  </div>
+                  
+                  <div className="form-group">
+                    <label htmlFor="message" className="form-label">Message *</label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={emailForm.message}
+                      onChange={handleFormChange}
+                      required
+                      rows={6}
+                      className="form-textarea"
+                      placeholder="Tell me about your project, question, or how I can help/what services you're looking for"
+                    />
+                  </div>
+                  
+                  <div className="form-submit">
+                    <button 
+                      type="submit" 
+                      disabled={isSubmitting}
+                      className={`submit-button ${isSubmitting ? 'submitting' : ''}`}
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <span className="loading-spinner-small"></span>
+                          Opening Email Client...
+                        </>
+                      ) : (
+                        'Send Message'
+                      )}
+                    </button>
+                    
+                    {submitStatus === 'success' && (
+                      <div className="status-message success">
+                        ✓ Email client opened! Your message is ready to send.
+                      </div>
+                    )}
+                    
+                    {submitStatus === 'error' && (
+                      <div className="status-message error">
+                        ✗ Something went wrong. Please try again or email me directly.
+                      </div>
+                    )}
+                  </div>
+                </form>
+              </div>
             </div>
 
             {/* Additional Contact Info */}
@@ -562,6 +710,175 @@ export default function Contact() {
           100% { left: 100%; }
         }
 
+        /* Email Form Styles */
+        .email-form-container {
+          max-width: 800px;
+          margin: 0 auto;
+          background: rgba(34, 197, 94, 0.03);
+          border: 2px solid rgba(34, 197, 94, 0.15);
+          border-radius: 1rem;
+          padding: 2.5rem;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .email-form-container::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.08), transparent);
+          animation: shimmer 4s ease-in-out infinite;
+        }
+
+        .form-title {
+          font-size: 2rem;
+          font-weight: bold;
+          color: #22c55e;
+          font-family: 'Courier New', monospace;
+          text-align: center;
+          margin-bottom: 0.5rem;
+          text-shadow: 0 0 15px rgba(34, 197, 94, 0.3);
+        }
+
+        .form-subtitle {
+          color: #9ca3af;
+          text-align: center;
+          margin-bottom: 2rem;
+          font-family: 'Courier New', monospace;
+          font-style: italic;
+        }
+
+        .contact-form {
+          position: relative;
+          z-index: 1;
+        }
+
+        .form-row {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1.5rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+          margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+          display: block;
+          color: #22c55e;
+          font-family: 'Courier New', monospace;
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+          font-size: 0.9rem;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+        }
+
+        .form-input,
+        .form-textarea {
+          width: 100%;
+          background: rgba(0, 0, 0, 0.6);
+          border: 2px solid rgba(34, 197, 94, 0.2);
+          border-radius: 0.5rem;
+          padding: 0.75rem 1rem;
+          color: #ffffff;
+          font-family: 'Courier New', monospace;
+          font-size: 1rem;
+          transition: all 0.3s ease;
+          outline: none;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+          border-color: rgba(34, 197, 94, 0.5);
+          box-shadow: 0 0 15px rgba(34, 197, 94, 0.2);
+          background: rgba(0, 0, 0, 0.8);
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+          color: #6b7280;
+          font-style: italic;
+        }
+
+        .form-textarea {
+          resize: vertical;
+          min-height: 120px;
+        }
+
+        .form-submit {
+          text-align: center;
+          margin-top: 2rem;
+        }
+
+        .submit-button {
+          background: linear-gradient(135deg, #22c55e, #16a34a);
+          border: none;
+          border-radius: 0.5rem;
+          padding: 1rem 2rem;
+          color: #000000;
+          font-family: 'Courier New', monospace;
+          font-weight: bold;
+          font-size: 1.1rem;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          position: relative;
+          overflow: hidden;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        .submit-button:hover:not(:disabled) {
+          transform: translateY(-2px);
+          box-shadow: 0 10px 25px rgba(34, 197, 94, 0.3);
+        }
+
+        .submit-button:disabled {
+          opacity: 0.7;
+          cursor: not-allowed;
+        }
+
+        .submit-button.submitting {
+          background: linear-gradient(135deg, #16a34a, #15803d);
+        }
+
+        .loading-spinner-small {
+          width: 16px;
+          height: 16px;
+          border: 2px solid rgba(0, 0, 0, 0.3);
+          border-top: 2px solid #000000;
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+        }
+
+        .status-message {
+          margin-top: 1rem;
+          padding: 0.75rem 1rem;
+          border-radius: 0.5rem;
+          font-family: 'Courier New', monospace;
+          font-weight: 600;
+          text-align: center;
+        }
+
+        .status-message.success {
+          background: rgba(34, 197, 94, 0.1);
+          border: 1px solid rgba(34, 197, 94, 0.3);
+          color: #22c55e;
+        }
+
+        .status-message.error {
+          background: rgba(239, 68, 68, 0.1);
+          border: 1px solid rgba(239, 68, 68, 0.3);
+          color: #ef4444;
+        }
+
         @media (max-width: 767px) {
           .contact-card {
             margin-bottom: 2rem;
@@ -569,6 +886,19 @@ export default function Contact() {
           
           .footer-skills {
             justify-content: center;
+          }
+
+          .email-form-container {
+            padding: 1.5rem;
+          }
+
+          .form-row {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+          }
+
+          .form-title {
+            font-size: 1.5rem;
           }
         }
       `}</style>

@@ -62,14 +62,14 @@ export default function Experiences() {
           if (i < 5) {
             // Work experience items
             const titles = [
-              'CEO',
+              'Builder',
               'AI/Software Engineer',
               'Marketing Technologies Intern', 
               'AI/Software Engineer',
               'Technical and Development Lead'
             ];
             const companies = [
-              'Nightshade | Remote',
+              'Alexandria',
               'Series | New York City, NY',
               'The Coca-Cola Company | Atlanta, GA',
               'Andromeda Labs, L.L.C. | Remote',
@@ -168,13 +168,20 @@ export default function Experiences() {
                       <h3 className="timeline-title">{getDisplayText('CEO')}</h3>
                       <h4 className="timeline-company">{getDisplayText('Nightshade | Remote')}</h4>
                       <p className="timeline-description">
-                        Building something cool...
+                        <a 
+                          href="https://www.joinalexandria.ai/" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="timeline-link"
+                        >
+                          Building something cool...
+                        </a>
                       </p>
                       <div className="timeline-skills">
-                        <span className="skill-tag">Agentic AI Production</span>
-                        <span className="skill-tag">Cybersecurity</span>
-                        <span className="skill-tag">RL</span>
-                        <span className="skill-tag">Operations</span>
+                        <span className="skill-tag">Shared Knowledge Systems</span>
+                        <span className="skill-tag">Research</span>
+                        <span className="skill-tag">Applied AI/ML</span>
+                        <span className="skill-tag">Cool Stuff</span>
                       </div>
                     </div>
                   </div>
@@ -578,6 +585,20 @@ export default function Experiences() {
           color: #d1d5db;
           line-height: 1.6;
           margin-bottom: 1rem;
+        }
+
+        .timeline-link {
+          color: #4ade80;
+          text-decoration: none;
+          border-bottom: 1px solid rgba(74, 222, 128, 0.3);
+          transition: all 0.3s ease;
+          cursor: pointer;
+        }
+
+        .timeline-link:hover {
+          color: #22c55e;
+          border-bottom-color: #22c55e;
+          text-shadow: 0 0 8px rgba(34, 197, 94, 0.4);
         }
 
         .project-summary {

@@ -79,6 +79,9 @@ export default function Experiences() {
             if (titles[i]) {
               scrambleText(titles[i], 1500);
               setTimeout(() => scrambleText(companies[i], 1500), 200);
+              if (i === 0) {
+                setTimeout(() => scrambleText('Building something cool...', 1500), 400);
+              }
             }
           } else {
             // Project items
@@ -154,7 +157,7 @@ export default function Experiences() {
                 <h2 className="section-title">Work Experience</h2>
                 <div className="timeline-container">
                   
-                  {/* Timeline item 1 - Nightshade CEO */}
+                  {/* Timeline item 1 - Alexandria Builder */}
                   <div className={`timeline-item ${visibleItems.includes(0) ? 'item-visible' : 'item-hidden'}`}>
                     <div className="timeline-node company-logo-node">
                       <div className="company-logo-placeholder">
@@ -164,9 +167,9 @@ export default function Experiences() {
                       </div>
                     </div>
                     <div className="timeline-content">
-                      <div className="timeline-date">July 2025 - Current</div>
-                      <h3 className="timeline-title">{getDisplayText('CEO')}</h3>
-                      <h4 className="timeline-company">{getDisplayText('Nightshade | Remote')}</h4>
+                      <div className="timeline-date">September 2025 - Current</div>
+                      <h3 className="timeline-title">{getDisplayText('Builder')}</h3>
+                      <h4 className="timeline-company">{getDisplayText('Alexandria')}</h4>
                       <p className="timeline-description">
                         <a 
                           href="https://www.joinalexandria.ai/" 
@@ -174,7 +177,7 @@ export default function Experiences() {
                           rel="noopener noreferrer"
                           className="timeline-link"
                         >
-                          Building something cool...
+                          {getDisplayText('Building something cool...')}
                         </a>
                       </p>
                       <div className="timeline-skills">
@@ -590,15 +593,37 @@ export default function Experiences() {
         .timeline-link {
           color: #4ade80;
           text-decoration: none;
-          border-bottom: 1px solid rgba(74, 222, 128, 0.3);
+          border-bottom: 2px solid rgba(74, 222, 128, 0.5);
           transition: all 0.3s ease;
           cursor: pointer;
+          font-weight: 600;
+          font-size: 1.1em;
+          text-shadow: 0 0 10px rgba(74, 222, 128, 0.3);
+          padding: 0.25rem 0.5rem;
+          background: rgba(74, 222, 128, 0.08);
+          border-radius: 0.375rem;
+          display: inline-block;
+          animation: subtlePulse 3s ease-in-out infinite;
         }
 
         .timeline-link:hover {
           color: #22c55e;
           border-bottom-color: #22c55e;
-          text-shadow: 0 0 8px rgba(34, 197, 94, 0.4);
+          text-shadow: 0 0 15px rgba(34, 197, 94, 0.6);
+          background: rgba(34, 197, 94, 0.15);
+          transform: scale(1.02);
+          box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+        }
+
+        @keyframes subtlePulse {
+          0%, 100% { 
+            text-shadow: 0 0 10px rgba(74, 222, 128, 0.3);
+            background: rgba(74, 222, 128, 0.08);
+          }
+          50% { 
+            text-shadow: 0 0 15px rgba(74, 222, 128, 0.5);
+            background: rgba(74, 222, 128, 0.12);
+          }
         }
 
         .project-summary {

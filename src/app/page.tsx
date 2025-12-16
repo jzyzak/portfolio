@@ -232,18 +232,18 @@ export default function Home() {
                   </p>
                   <p className="content-text">
                     If you&apos;re interested in my work and seeing what I&apos;ve already done, check out my experiences page. If you want 
-                    to get in touch or learn more about me, check out my contact page. Here are some of the services I offer:
+                    to talk about building cool stuff, get in touch, or learn more about me, check out my contact page. Here are some of the services I offer:
                   </p>
                 </div>
 
                 <div className="content-block">
                   <h3 className="subsection-title">{getDisplayText('What I Do')}</h3>
                   <ul className="content-list">
-                    <li className="list-item">💻 Full-Stack Web Development</li>
-                    <li className="list-item">⚡ Automation & Workflow Creation</li>
-                    <li className="list-item">🤖 AI Development</li>
-                    <li className="list-item">🎓 Tutoring & Academic Support</li>
-                    <li className="list-item">🏫 College Application Consulting</li>
+                    <li className="list-item">Full-Stack Web Development</li>
+                    <li className="list-item">Automation & Workflow Creation</li>
+                    <li className="list-item">AI Development</li>
+                    <li className="list-item">Tutoring & Academic Support</li>
+                    <li className="list-item">College Application Consulting</li>
                   </ul>
                 </div>
 

@@ -54,7 +54,7 @@ export default function Experiences() {
       
       // Start revealing timeline items one by one
       const revealItems = async () => {
-        for (let i = 0; i < 8; i++) { // 5 work items + 3 project items
+        for (let i = 0; i < 9; i++) { // 5 work items + 4 project items
           await new Promise(resolve => setTimeout(resolve, 300));
           setVisibleItems(prev => [...prev, i]);
           
@@ -86,9 +86,10 @@ export default function Experiences() {
           } else {
             // Project items
             const projectTitles = [
+              'Powkie',
               'AI-Powered Fitness App',
               'AI-Driven Investment Insights Platform',
-              'Black-Scholes Option Pricing Web App'
+              'Black-Scholes Option Pricing Web App',
             ];
             
             const projectIndex = i - 5;
@@ -315,6 +316,31 @@ export default function Experiences() {
                       <div className="node-dot"></div>
                     </div>
                     <div className="timeline-content">
+                      <h3 className="timeline-title">{getDisplayText('Powkie')}</h3>
+                      <p className="project-summary">
+                        Summary: It was tough to find people who wanted to play poker, so we built an app for hosting live games.
+                      </p>
+                      <p className="timeline-description">
+                        Built a web app designed to connect gambling degens and poker fans to facilitate live game hosting. 
+                        The platform lets users create, discover, and join local poker games with features like real-time game listings, 
+                        player matching, location-based search, and secure event management.
+                      </p>
+                      <div className="timeline-skills">
+                        <span className="skill-tag">Mobile Development</span>
+                        <span className="skill-tag">Web Development</span>
+                        <span className="skill-tag">Real-time Features</span>
+                        <span className="skill-tag">Location Services</span>
+                        <span className="skill-tag">Event Management</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Project item 2 */}
+                  <div className={`timeline-item ${visibleItems.includes(6) ? 'item-visible' : 'item-hidden'}`}>
+                    <div className="timeline-node project-node">
+                      <div className="node-dot"></div>
+                    </div>
+                    <div className="timeline-content">
                       <h3 className="timeline-title">{getDisplayText('AI-Powered Fitness App')}</h3>
                       <p className="project-summary">
                         Summary: My form sucked in the gym, so I built an app to help me fix that.
@@ -334,8 +360,8 @@ export default function Experiences() {
                     </div>
                   </div>
 
-                  {/* Project item 2 */}
-                  <div className={`timeline-item ${visibleItems.includes(6) ? 'item-visible' : 'item-hidden'}`}>
+                  {/* Project item 3 */}
+                  <div className={`timeline-item ${visibleItems.includes(7) ? 'item-visible' : 'item-hidden'}`}>
                     <div className="timeline-node project-node">
                       <div className="node-dot"></div>
                     </div>
@@ -362,8 +388,8 @@ export default function Experiences() {
                     </div>
                   </div>
 
-                  {/* Project item 3 */}
-                  <div className={`timeline-item ${visibleItems.includes(7) ? 'item-visible' : 'item-hidden'}`}>
+                  {/* Project item 4 */}
+                  <div className={`timeline-item ${visibleItems.includes(8) ? 'item-visible' : 'item-hidden'}`}>
                     <div className="timeline-node project-node">
                       <div className="node-dot"></div>
                     </div>

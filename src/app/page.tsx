@@ -1,5 +1,13 @@
 const workExperience = [
   {
+    company: "MedPilot",
+    period: "March 2026 - Current",
+    location: "Remote",
+    role: "Founder",
+    highlights: ["Platform for handling your medical conditions and scheduling your appointments"],
+    link: "https://www.medpilot.us/",
+  },
+  {
     company: "Optiver",
     period: "March 2026",
     location: "Chicago",
@@ -18,6 +26,7 @@ const workExperience = [
       "Built an AI research OS with document search, workflow tracking, and reasoning across Gmail, Drive, and Slack",
       "Developed full-stack system (Next.js, FastAPI, OpenSearch, DynamoDB/S3, Firebase Auth) indexing 10k+ documents",
     ],
+    link: "https://www.joinalexandria.ai/",
   },
   {
     company: "Artemis",
@@ -58,7 +67,7 @@ export default function Home() {
         <header className="reveal">
           <h1 className="text-strong mb-3 text-4xl md:text-5xl">Josh Zyzak</h1>
           <p className="max-w-3xl text-base text-[var(--muted)] md:text-lg">
-            Sophomore EECS student @ Harvard - AI researcher - builder/founder - previously top 500 competitive Fortnite NAC - currently sidequesting + building proactive agents for consumer healthcare + Spectre Capital
+            Sophomore studying EECS @ Harvard - AI researcher - builder/founder - previously top 500 competitive Fortnite NAC - poker degen - currently sidequesting + building proactive agents for consumer healthcare + Spectre Capital
           </p>
         </header>
 
@@ -89,6 +98,16 @@ export default function Home() {
                     <li key={highlight}>{highlight}</li>
                   ))}
                 </ul>
+                {item.link && (
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 inline-block text-sm text-[var(--foreground)] underline underline-offset-2"
+                  >
+                    Visit website
+                  </a>
+                )}
               </article>
             ))}
           </div>

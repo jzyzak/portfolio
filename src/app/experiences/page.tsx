@@ -38,7 +38,7 @@ export default function ProjectsPage() {
         <div className="grid gap-5 md:grid-cols-3">
           {projects.map((project, index) => (
             <article
-              key={project.name}
+              key={`${project.name}-${index}`}
               className={`reveal space-y-2 border border-[var(--border)] bg-[var(--background)]/94 p-5 ${
                 index % 3 === 0 ? "reveal-delay-1" : index % 3 === 1 ? "reveal-delay-2" : "reveal-delay-3"
               }`}

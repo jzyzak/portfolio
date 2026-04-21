@@ -21,8 +21,16 @@ const distance = (a: NodeDef, b: NodeDef) => Math.hypot(a.x - b.x, a.y - b.y);
 
 export default function GraphBackground() {
   const [time, setTime] = useState(0);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) {
+      return;
+    }
     let raf = 0;
     const tick = () => {
       setTime(performance.now() / 1000);
@@ -30,7 +38,7 @@ export default function GraphBackground() {
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
-  }, []);
+  }, [mounted]);
 
   const nodes = useMemo<NodeDef[]>(
     () =>
@@ -73,6 +81,10 @@ export default function GraphBackground() {
       })),
     [nodes, time]
   );
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <div className="graph-bg" aria-hidden="true">

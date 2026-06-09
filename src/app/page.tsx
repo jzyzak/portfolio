@@ -1,11 +1,11 @@
 const workExperience = [
   {
-    company: "MedPilot",
+    company: "Spectre Capital",
     period: "March 2026 - Current",
     location: "Remote",
     role: "Founder",
-    highlights: ["Platform for handling your medical conditions and scheduling your appointments"],
-    link: "https://www.medpilot.us/",
+    highlights: ["Building an AI-powered hedge fund for prediction markets (YC S26)"],
+    link: "https://www.spectrecapital.ai/",
   },
   {
     company: "Optiver",
